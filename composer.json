@@ -1,0 +1,5 @@
+{
+  "require": {
+    "athlon1600/php-proxy-app": "^5.1"
+  }
+}
