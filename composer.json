@@ -1,5 +1,13 @@
 {
+  "name": "pcamlogic99/secroxy",
+  "description": "A simple PHP web proxy to access restricted websites securely and anonymously.",
+  "type": "project",
   "require": {
     "athlon1600/php-proxy-app": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Proxy\\": "vendor/athlon1600/php-proxy-app/src/"
+    }
   }
 }
