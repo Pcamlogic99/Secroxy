@@ -3,7 +3,7 @@
   "description": "A simple PHP web proxy to access restricted websites securely and anonymously.",
   "type": "project",
   "require": {
-    "athlon1600/php-proxy-app": "^5.1"
+    "athlon1600/php-proxy-app": "^3.0"
   },
   "autoload": {
     "psr-4": {
