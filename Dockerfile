@@ -1,21 +1,20 @@
+# Use official PHP 8.2 CLI image
 FROM php:8.2-cli
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy project files
+# Copy all project files into the container
 COPY . .
 
-# Install Composer
+# Install dependencies with Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-    php -r "unlink('composer-setup.php');"
+    php -r "unlink('composer-setup.php');" && \
+    composer install --no-interaction --no-scripts --no-progress
 
-# Install dependencies
-RUN composer install
-
-# Expose the port Render uses
+# Expose port 8080 for Render or other hosting
 EXPOSE 8080
 
-# Start PHP server from public folder
+# Start PHP built-in server pointing to public directory
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
